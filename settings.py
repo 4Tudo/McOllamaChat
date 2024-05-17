@@ -1,0 +1,2 @@
+chatCommand = './@ollChat '
+prompt = ''''''
