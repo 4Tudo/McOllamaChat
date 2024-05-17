@@ -4,7 +4,7 @@ import re
 
 import settings
 
-
+errorEncodeList = []
 
 client = Client(host='http://localhost:11434')
 
@@ -57,6 +57,9 @@ def chatThread(mc,msg):
         except Exception as e:
             print(f'Error content:', chunk['response'])
             print(f'Generating error!: {e}')
+            errorEncodeList.append(chunk['response'])
+            for i in errorEncodeList:
+                streamList.replace(i,'')
     print('Generate complete!')
 
 # print(getChatContentStream('你好!'))
